@@ -8,6 +8,6 @@ import org.springframework.stereotype.Component;
 public class AssignmentRepository implements IAssignmentRepository {
     @Override
     public Assignment findById(long id) {
-        return null;
+        return new Assignment("San Jose", 1231343, 4321234){{setId(id);}};
     }
 }
