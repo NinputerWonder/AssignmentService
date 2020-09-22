@@ -64,6 +64,8 @@ public class EmployeeProviderTest {
         employee = employees.stream().filter(e -> e.id == 444).findFirst().orElse(null);
         assertEquals("Mickey Mouse" , employee.name);
         assertEquals(60 , employee.age);
+
+        verify(1, postRequestedFor(urlEqualTo("/employees")));
     }
 
     String toJson(Object object) throws JsonProcessingException {
